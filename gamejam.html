@@ -21,28 +21,110 @@
   </div>
 
   <div class="content">
-    <h1>Game Jam 專案</h1>
 
-    <img src="assets/gamejam.gif">
+  <h1>你獨自辦公 | Working Alone</h1>
+  <h2>Hello, Godot! Game Jam Experiment 2026 專案</h2>
 
-    <p><b>專案簡介：</b></p>
-    <p>48 小時內完成的團隊遊戲原型。</p>
+  <!-- 🎥 GIF 展示 -->
+  <img src="assets/gamejam.gif" alt="gameplay">
 
-    <p><b>負責內容：</b></p>
-    <p>遊戲邏輯、敵人行為、互動物件、場景圖塊配置</p>
+  <!-- Overview -->
+  <h3>專案簡介</h3>
+  <p>
+    於 Game Jam 中 48 小時內完成的 2D 平台遊戲，大會主題為「Break the Loop」。<br>
+    玩家需在重複的工作日常中探索這間黑心公司並逃離循環。
+  </p>
 
-    <p><b>技術重點：</b></p>
-    <ul>
-      <li>AI 與互動系統</li>
-      <li>事件觸發與整合</li>
-      <li>多人開發整合</li>
-    </ul>
+  <!-- Role -->
+  <h3>負責內容</h3>
+  <ul>
+    <li>關卡設計與遊戲概念發想</li>
+    <li>敵人行為實作（兩種敵人）</li>
+    <li>互動物件（傳送門）</li>
+    <li>場景圖塊（Tile）配置與關卡建置</li>
+  </ul>
 
-    <p><b>連結：</b></p>
-    <a href="#">Play</a> |
-    <a href="#">GitHub</a>
+  <!-- Core Systems -->
+  <h3>核心實作</h3>
 
-  </div>
+  <ul class="core-list">
+    <li>
+      <b>關卡與場景系統：</b>
+      使用 Tile-based 方式建構關卡，並依據遊戲節奏安排敵人與互動物件配置。
+    </li>
+
+    <li>
+      <b>敵人行為：</b>
+      實作基本行為邏輯，依據玩家位置觸發互動。
+    </li>
+
+    <li>
+      <b>互動物件：</b>
+      以 trigger 為基礎設計互動機制，包含傳送門等功能物件。
+    </li>
+  </ul>
+
+  <!-- Challenges -->
+<h3>技術挑戰</h3>
+
+<div class="challenge">
+  <h4>平行開發下的測試問題</h4>
+
+  <p>
+    在開發過程中，關卡與敵人系統需要與玩家互動，但玩家控制由其他組員負責，
+    無法等待完整實作完成後再進行測試。
+  </p>
+
+  <p>
+    為了維持開發進度，我建立了一個簡化的玩家測試物件，
+    僅保留基本移動功能，並先以碰撞方式觸發互動。
+    在最終整合時，再將互動邏輯改為正式的操作觸發（按鍵互動）。
+  </p>
+
+  <p>
+    這樣的做法讓關卡與物件系統可以獨立開發與驗證，
+    降低對其他模組完成度的依賴。
+  </p>
+</div>
+
+
+<div class="challenge">
+  <h4>多人協作的程式整合</h4>
+
+  <p>
+    團隊由多名程式組成，且在初期未建立統一的系統架構，
+    導致各模組之間的整合成本較高。
+  </p>
+
+  <p>
+    在時間有限的情況下，我們選擇先以模組為單位各自開發，
+    並透過 GitHub 進行版本控管，將不同功能拆分在各自資料夾中，
+    再由一名組員負責最終整合。
+  </p>
+
+  <p>
+    雖然這種方式在架構上較為鬆散，
+    但能有效降低開發期間的衝突，
+    並在 Game Jam 的時間壓力下維持開發進度。
+  </p>
+</div>
+
+  <!-- Takeaways -->
+  <h3>開發收穫</h3>
+  <ul>
+    <li>理解多人協作下模組拆分與整合的重要性</li>
+    <li>學習在時間壓力下優先確保可遊玩性</li>
+    <li>累積與美術、音效協作的經驗</li>
+  </ul>
+
+  <!-- Links -->
+  <h3>連結</h3>
+  <p>
+    <a href="https://fungamer9527.itch.io/working-alone">Play</a> |
+    <a href="https://github.com/YouZhengHua/GodotGameJam2026">GitHub</a>
+  </p>
+
+</div>
 
 </div>
 </body>
