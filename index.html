@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Johnny Cheng - Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -10,31 +11,77 @@
 <div class="container">
   <div class="sidebar">
     <div class="name">
-    <div class="zh">鄭博升</div>
-    <div class="en">Johnny Cheng</div>
-  </div>
-
-    <a href="index.html">Home</a>
-    <a href="gamejam.html">Game Jam</a>
+      <div class="zh">鄭博升</div>
+      <div class="en">Johnny Cheng</div>
+    </div>
+    <a href="index.html" class="active">Home</a>
     <a href="shooter.html">Space Shooter</a>
+    <a href="gamejam.html">Game Jam</a>
     <a href="godot.html">Godot Project</a>
   </div>
 
   <div class="content">
-    <div class="profile">
 
-      <h1>鄭博升<span style="color:#888;"> / Johnny Cheng</span></h1>      
-      <img src="assets/profile.jpg" alt="profile"><br>
-      <a class="btn" href="gamejam.html">Projects</a>
+    <img src="assets/PORTRAIT_WHITE.JPG" alt="profile" class="profile-img">
+    <h1>鄭博升<span> / Johnny Cheng</span></h1>
+    <p class="hero-role">Game Developer</p>
+    <p class="hero-bio">
+      遊戲工程師，專注 Unity 開發，具備獨立開發與 Game Jam 合作經驗，
+      持續學習並擴展跨引擎開發能力。
+    </p>
+
+    <h3>Projects</h3>
+    <div class="project-grid">
+
+      <a class="project-card" href="shooter.html">
+        <span class="tech-badge">Unity</span>
+        <div class="project-card-title">Space Shooter</div>
+        <p class="project-card-desc">個人獨立製作的太空射擊遊戲，實作 Object Pooling、強化系統等機制。</p>
+        <div class="card-footer">
+          <span class="card-arrow">View →</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="gamejam.html">
+        <span class="tech-badge">Godot</span>
+        <div class="project-card-title">你獨自辦公 | Working Alone</div>
+        <p class="project-card-desc">48 小時 Game Jam 合作專案，主題「Break the Loop」的 2D 平台遊戲。</p>
+        <div class="card-footer">
+          <span class="card-arrow">View →</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="godot.html">
+        <span class="tech-badge">Godot</span>
+        <div class="project-card-title">Godot 橫向卷軸遊戲</div>
+        <p class="project-card-desc">跟著教學製作並自行延伸改良的橫向動作遊戲。</p>
+        <div class="card-footer">
+          <span class="card-arrow">View →</span>
+        </div>
+      </a>
+
     </div>
 
-    <div class="footer">
-      <a href="https://github.com/ps-cheng">GitHub</a>
-      <a href="https://linkedin.com/in/po-sheng-johnny-cheng">LinkedIn</a>
-      <a href="mailto:johnnyc0217@email.com">Email</a>
+    <h3>Contact</h3>
+    <div class="link-row">
+      <a class="icon-link" href="https://github.com/ps-cheng">
+        <img src="https://cdn.simpleicons.org/github" alt="GitHub">
+        GitHub
+      </a>
+      <a class="icon-link" href="https://linkedin.com/in/po-sheng-johnny-cheng">
+        <img src="https://cdn.simpleicons.org/linkedin" alt="LinkedIn">
+        LinkedIn
+      </a>
+      <a class="icon-link" href="mailto:johnnyc0217@email.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        Email
+      </a>
     </div>
+
   </div>
-
 </div>
 </body>
 </html>

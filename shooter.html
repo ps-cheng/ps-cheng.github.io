@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>Space Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Shooter — Johnny Cheng</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -10,40 +11,126 @@
 <div class="container">
   <div class="sidebar">
     <div class="name">
-    <div class="zh">鄭博升</div>
-    <div class="en">Johnny Cheng</div>
-  </div>
-
+      <div class="zh">鄭博升</div>
+      <div class="en">Johnny Cheng</div>
+    </div>
     <a href="index.html">Home</a>
+    <a href="shooter.html" class="active">Space Shooter</a>
     <a href="gamejam.html">Game Jam</a>
-    <a href="shooter.html">Space Shooter</a>
     <a href="godot.html">Godot Project</a>
   </div>
 
   <div class="content">
-    <h1>飛船射擊遊戲</h1>
 
-    <img src="assets/shooter.gif">
+    <h1>Space Shooter</h1>
+    <h2>Unity 個人專案</h2>
 
-    <p><b>專案簡介：</b></p>
-    <p>Unity 製作的小型射擊遊戲。</p>
+    <span class="tech-badge">Unity</span>
+    <span class="tech-badge">C#</span>
+    <span class="tech-badge">個人專案</span>
 
-    <p><b>負責內容：</b></p>
-    <p>玩家控制、射擊、敵人生成、遊戲流程</p>
+    <img src="assets/shooter.gif" alt="gameplay" class="screenshot">
 
-    <p><b>技術重點：</b></p>
+    <h3>專案簡介</h3>
+    <p>
+      以 Unity Learn 的 Junior Programmer Path 課程作為起點，
+      從設計文件、原型建立到最終調整皆由個人完整實作。
+    </p>
+    <p>
+      遊戲概念參考經典街機射擊遊戲「Raiden」，玩家在場景中移動並射擊敵人，
+      並透過拾取強化道具提升攻擊能力。
+    </p>
+
+    <h3>負責內容</h3>
     <ul>
-      <li>Game Loop</li>
-      <li>物件生成與銷毀管理</li>
-      <li>即時操作回應</li>
+      <li>遊戲系統設計與實作</li>
+      <li>玩家操作與射擊機制設計</li>
+      <li>敵人與道具生成邏輯</li>
+      <li>遊戲節奏與體驗調整</li>
     </ul>
 
-    <p><b>連結：</b></p>
-    <a href="#">Play</a> |
-    <a href="#">GitHub</a>
+    <h3>核心實作</h3>
+    <ul>
+      <li>
+        <b>玩家控制與射擊系統：</b>
+        採用 WASD 移動搭配滑鼠射擊，並實作角色朝向滑鼠方向轉動
+      </li>
+      <li>
+        <b>敵人與生成機制：</b>
+        透過 Spawn Manager 統一管理敵人與道具的生成時機與位置，
+        使遊戲節奏能夠集中調整與控制
+      </li>
+      <li>
+        <b>物件管理（Object Pooling）：</b>
+        將子彈與敵人物件改為重複使用，避免頻繁 Instantiate / Destroy，
+        提升執行效率並降低效能波動
+      </li>
+      <li>
+        <b>強化系統：</b>
+        玩家可透過拾取道具改變攻擊模式，提升火力與遊戲變化性
+      </li>
+      <li>
+        <b>畫面與遊玩模式調整：</b>
+        將原本垂直卷軸改為符合 PC 的橫向視角，並調整整體操作方式
+      </li>
+    </ul>
+
+    <h3>設計與技術挑戰</h3>
+
+    <div class="challenge">
+      <h4>操作方式的設計取捨</h4>
+      <p>
+        在將遊戲從傳統垂直卷軸改為自由移動後，原本的操作方式不再適用，
+        需要重新設計玩家的移動與射擊邏輯，以確保操作流暢。
+      </p>
+      <p>
+        過程中嘗試了多種方案，包括維持單方向敵人進攻、使用鍵盤旋轉控制，
+        以及滑鼠射擊等方式，並透過實際遊玩體驗比較其操作手感。
+      </p>
+      <p>
+        最終選擇以滑鼠作為射擊方向，搭配 WASD 移動，
+        在操作直覺性與反應速度之間取得較佳平衡。
+      </p>
+    </div>
+
+    <div class="challenge">
+      <h4>頻繁生成物件帶來的效能問題</h4>
+      <p>
+        在遊戲中，子彈與敵人會持續生成與銷毀，
+        初期使用 Instantiate / Destroy 實作時，
+        在物件數量增加後出現效能波動的情況。
+      </p>
+      <p>
+        為了改善此問題，將相關物件改為使用 Object Pooling，
+        預先建立並重複使用物件，
+        避免執行期間頻繁分配與釋放記憶體。
+      </p>
+      <p>
+        透過此方式，使遊戲在高頻率射擊與敵人生成的情況下，
+        仍能維持穩定的執行表現。
+      </p>
+    </div>
+
+    <h3>開發收穫</h3>
+    <ul>
+      <li>理解從設計文件到實作的完整開發流程</li>
+      <li>學習透過實際遊玩回饋調整操作與體驗</li>
+      <li>累積在遊戲手感與視覺回饋上的設計經驗</li>
+    </ul>
+
+    <h3>連結</h3>
+    <div class="link-row">
+      <a class="icon-link" href="#">
+        <img src="https://cdn.simpleicons.org/itchio" alt="itch.io">
+        itch.io
+      </a>
+      <a class="icon-link" href="#">
+        <img src="https://cdn.simpleicons.org/github" alt="GitHub">
+        GitHub
+      </a>
+    </div>
 
   </div>
-
 </div>
 </body>
 </html>

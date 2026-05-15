@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>Game Jam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working Alone — Johnny Cheng</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -10,122 +11,112 @@
 <div class="container">
   <div class="sidebar">
     <div class="name">
-    <div class="zh">鄭博升</div>
-    <div class="en">Johnny Cheng</div>
-  </div>
-
+      <div class="zh">鄭博升</div>
+      <div class="en">Johnny Cheng</div>
+    </div>
     <a href="index.html">Home</a>
-    <a href="gamejam.html">Game Jam</a>
     <a href="shooter.html">Space Shooter</a>
+    <a href="gamejam.html" class="active">Game Jam</a>
     <a href="godot.html">Godot Project</a>
   </div>
 
   <div class="content">
 
-  <h1>你獨自辦公 | Working Alone</h1>
-  <h2>Hello, Godot! Game Jam Experiment 2026 專案</h2>
+    <h1>你獨自辦公 | Working Alone</h1>
+    <h2>Hello, Godot! Game Jam Experiment 2026</h2>
 
-  <!-- 🎥 GIF 展示 -->
-  <img src="assets/gamejam.gif" alt="gameplay">
+    <span class="tech-badge">Godot</span>
+    <span class="tech-badge">GDScript</span>
+    <span class="tech-badge">48-Hour Jam</span>
+    <span class="tech-badge">合作專案</span>
 
-  <!-- Overview -->
-  <h3>專案簡介</h3>
-  <p>
-    於 Game Jam 中 48 小時內完成的 2D 平台遊戲，大會主題為「Break the Loop」。<br>
-    玩家需在重複的工作日常中探索這間黑心公司並逃離循環。
-  </p>
+    <img src="assets/gamejam.gif" alt="gameplay" class="screenshot">
 
-  <!-- Role -->
-  <h3>負責內容</h3>
-  <ul>
-    <li>關卡設計與遊戲概念發想</li>
-    <li>敵人行為實作（兩種敵人）</li>
-    <li>互動物件（傳送門）</li>
-    <li>場景圖塊（Tile）配置與關卡建置</li>
-  </ul>
+    <h3>專案簡介</h3>
+    <p>
+      第一次參加 Game Jam，也是第一次使用 Godot 開發。參加前透過 YouTube 教學自學引擎基礎，
+      與三名程式和一名 UI/UX 組成五人團隊，在 48 小時內完成。
+    </p>
+    <p>
+      遊戲概念由我提出——以大會主題「Break the Loop」為出發，
+      設計成一名被困在辦公室日常迴圈中的上班族試圖逃脫的故事。
+    </p>
 
-  <!-- Core Systems -->
-  <h3>核心實作</h3>
+    <h3>負責內容</h3>
+    <ul>
+      <li>遊戲概念與故事設定發想</li>
+      <li>關卡設計與 Tile 地圖建置</li>
+      <li>巡邏型敵人行為實作</li>
+      <li>傳送門系統（與組員模組對接）</li>
+    </ul>
 
-  <ul class="core-list">
-    <li>
-      <b>關卡與場景系統：</b>
-      使用 Tile-based 方式建構關卡，並依據遊戲節奏安排敵人與互動物件配置。
-    </li>
+    <h3>核心實作</h3>
+    <ul>
+      <li>
+        <b>巡邏敵人：</b>
+        實作左右徘徊邏輯，玩家碰撞時觸發 Game Over。
+      </li>
+      <li>
+        <b>傳送門：</b>
+        負責接收互動事件並將玩家位置切換至對應出口，與負責互動提示的組員分工對接。
+      </li>
+      <li>
+        <b>關卡設計：</b>
+        以 Tile 建構場景，依遊戲節奏安排敵人分佈與互動物件配置。
+      </li>
+    </ul>
 
-    <li>
-      <b>敵人行為：</b>
-      實作基本行為邏輯，依據玩家位置觸發互動。
-    </li>
+    <h3>技術挑戰</h3>
 
-    <li>
-      <b>互動物件：</b>
-      以 trigger 為基礎設計互動機制，包含傳送門等功能物件。
-    </li>
-  </ul>
+    <div class="challenge">
+      <h4>平行開發下的測試問題</h4>
+      <p>
+        關卡與敵人系統需要與玩家物件互動，但玩家控制由其他組員負責，
+        無法等待對方完成再測試。
+      </p>
+      <p>
+        為了維持進度，我建立了一個簡化的測試用玩家物件，
+        只保留基本移動功能，互動也先以碰撞觸發代替按鍵。
+        整合時再由對應組員將觸發邏輯改回正式版本。
+      </p>
+      <p>
+        這樣的做法讓我的模組可以獨立驗證，
+        不需要依賴其他部分的完成度。
+      </p>
+    </div>
 
-  <!-- Challenges -->
-<h3>技術挑戰</h3>
+    <div class="challenge">
+      <h4>多人協作的程式整合</h4>
+      <p>
+        團隊在初期未建立統一架構，五個人各自開發不同模組，
+        整合時的對接成本比預期高。
+      </p>
+      <p>
+        在時間壓力下，我們選擇先以模組為單位各自推進，
+        透過 GitHub 分資料夾進行版本控管，
+        最後由一名組員統一將各模組整合進主場景。
+      </p>
+    </div>
 
-<div class="challenge">
-  <h4>平行開發下的測試問題</h4>
+    <h3>開發收穫</h3>
+    <p>
+      第一次在時間壓力下多人協作，實際體會到「先讓自己的模組可測試、再求整合」的開發節奏。
+      也讓我理解事先對齊介面與資料格式的重要性——等到要整合才發現沒對齊，代價會很高。
+    </p>
 
-  <p>
-    在開發過程中，關卡與敵人系統需要與玩家互動，但玩家控制由其他組員負責，
-    無法等待完整實作完成後再進行測試。
-  </p>
+    <h3>連結</h3>
+    <div class="link-row">
+      <a class="icon-link" href="https://fungamer9527.itch.io/working-alone">
+        <img src="https://cdn.simpleicons.org/itchio" alt="itch.io">
+        itch.io
+      </a>
+      <a class="icon-link" href="https://github.com/YouZhengHua/GodotGameJam2026">
+        <img src="https://cdn.simpleicons.org/github" alt="GitHub">
+        GitHub
+      </a>
+    </div>
 
-  <p>
-    為了維持開發進度，我建立了一個簡化的玩家測試物件，
-    僅保留基本移動功能，並先以碰撞方式觸發互動。
-    在最終整合時，再將互動邏輯改為正式的操作觸發（按鍵互動）。
-  </p>
-
-  <p>
-    這樣的做法讓關卡與物件系統可以獨立開發與驗證，
-    降低對其他模組完成度的依賴。
-  </p>
-</div>
-
-
-<div class="challenge">
-  <h4>多人協作的程式整合</h4>
-
-  <p>
-    團隊由多名程式組成，且在初期未建立統一的系統架構，
-    導致各模組之間的整合成本較高。
-  </p>
-
-  <p>
-    在時間有限的情況下，我們選擇先以模組為單位各自開發，
-    並透過 GitHub 進行版本控管，將不同功能拆分在各自資料夾中，
-    再由一名組員負責最終整合。
-  </p>
-
-  <p>
-    雖然這種方式在架構上較為鬆散，
-    但能有效降低開發期間的衝突，
-    並在 Game Jam 的時間壓力下維持開發進度。
-  </p>
-</div>
-
-  <!-- Takeaways -->
-  <h3>開發收穫</h3>
-  <ul>
-    <li>理解多人協作下模組拆分與整合的重要性</li>
-    <li>學習在時間壓力下優先確保可遊玩性</li>
-    <li>累積與美術、音效協作的經驗</li>
-  </ul>
-
-  <!-- Links -->
-  <h3>連結</h3>
-  <p>
-    <a href="https://fungamer9527.itch.io/working-alone">Play</a> |
-    <a href="https://github.com/YouZhengHua/GodotGameJam2026">GitHub</a>
-  </p>
-
-</div>
-
+  </div>
 </div>
 </body>
 </html>

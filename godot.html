@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>Godot Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Godot Project — Johnny Cheng</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -10,43 +11,62 @@
 <div class="container">
   <div class="sidebar">
     <div class="name">
-    <div class="zh">鄭博升</div>
-    <div class="en">Johnny Cheng</div>
-  </div>
-
+      <div class="zh">鄭博升</div>
+      <div class="en">Johnny Cheng</div>
+    </div>
     <a href="index.html">Home</a>
-    <a href="gamejam.html">Game Jam</a>
     <a href="shooter.html">Space Shooter</a>
-    <a href="godot.html">Godot Project</a>
+    <a href="gamejam.html">Game Jam</a>
+    <a href="godot.html" class="active">Godot Project</a>
   </div>
 
   <div class="content">
+
     <h1>Godot 橫向卷軸遊戲</h1>
+    <h2>Godot 個人專案</h2>
 
-    <img src="assets/godot.gif">
+    <span class="tech-badge">Godot</span>
+    <span class="tech-badge">GDScript</span>
+    <span class="tech-badge">個人專案</span>
 
-    <p><b>專案簡介：</b></p>
-    <p>使用 Godot 開發的動作遊戲。</p>
+    <img src="assets/godot.gif" alt="gameplay" class="screenshot">
 
-    <p><b>負責內容：</b></p>
-    <p>角色控制、戰鬥、敵人行為、關卡建置</p>
+    <h3>專案簡介</h3>
+    <p>使用 Godot 開發的橫向動作遊戲。跟著教學製作基礎架構後，自行擴充延伸多項功能以完善遊戲流程。</p>
 
-    <p><b>技術重點：</b></p>
+    <h3>負責內容</h3>
     <ul>
-      <li>角色控制與物理互動</li>
-      <li>狀態邏輯</li>
-      <li>場景與節點管理</li>
+      <li>角色控制與戰鬥系統</li>
+      <li>敵人行為邏輯</li>
+      <li>關卡建置與場景管理</li>
     </ul>
 
-    <p><b>補充：</b></p>
-    <p>目前持續優化遊戲流程與結尾呈現。</p>
+    <h3>核心實作</h3>
+    <ul>
+      <li><b>角色控制與物理互動：</b>實作移動、跳躍與攻擊等基本動作機制</li>
+      <li><b>狀態邏輯：</b>以狀態機管理角色與敵人的各種行為狀態</li>
+      <li><b>場景與節點管理：</b>利用 Godot 節點架構組織場景結構</li>
+    </ul>
 
-    <p><b>連結：</b></p>
-    <a href="#">Play</a> |
-    <a href="#">GitHub</a>
+    <h3>設計與技術挑戰</h3>
+    <!-- 內容補充中 -->
+
+    <h3>開發收穫</h3>
+    <!-- 內容補充中 -->
+
+    <h3>連結</h3>
+    <div class="link-row">
+      <a class="icon-link" href="#">
+        <img src="https://cdn.simpleicons.org/itchio" alt="itch.io">
+        itch.io
+      </a>
+      <a class="icon-link" href="#">
+        <img src="https://cdn.simpleicons.org/github" alt="GitHub">
+        GitHub
+      </a>
+    </div>
 
   </div>
-
 </div>
 </body>
 </html>
